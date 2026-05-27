@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio | Ratu Agne Panggarena</title>
+
+<style>
+
+:root{
+    --primary:#2563eb;
+    --secondary:#1e40af;
+    --dark:#0f172a;
+    --text:#475569;
+    --bg:#f8fafc;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+}
+
+/* NAVBAR */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 7%;
+    z-index:1000;
+    box-shadow:0 2px 12px rgba(0,0,0,0.05);
+}
+
+.logo{
+    text-decoration:none;
+    color:var(--primary);
+    font-size:24px;
+    font-weight:700;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:24px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+/* SECTION */
+
+section{
+    padding:80px 7% 60px;
+}
+
+/* HERO */
+
+#beranda{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(to bottom,#ffffff,#eff6ff);
+}
+
+.hero{
+    max-width:850px;
+}
+
+.hero h1{
+    font-size:50px;
+    line-height:1.2;
+    color:var(--dark);
+    margin-bottom:18px;
+    font-weight:700;
+}
+
+.hero h1 span{
+    color:var(--primary);
+}
+
+.subtitle{
+    font-size:18px;
+    color:#64748b;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:50px;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:var(--secondary);
+    transform:translateY(-3px);
+}
+
+/* TITLE */
+
+.section-title{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:40px;
+    color:var(--dark);
+}
+
+/* ABOUT */
+
+.about-box{
+    background:white;
+    max-width:1000px;
+    margin:auto;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.05);
+}
+
+.about-box p{
+    margin-bottom:18px;
+}
+
+/* SKILLS */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
+}
+
+.skill{
+    background:#dbeafe;
+    color:var(--secondary);
+    padding:10px 16px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* EXPERIENCE */
+
+.experience{
+    margin-top:30px;
+}
+
+.exp-card{
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:16px;
+    padding:22px;
+    margin-bottom:18px;
+}
+
+.exp-card h3{
+    color:var(--primary);
+    margin-bottom:8px;
+}
+
+/* PROJECT */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+}
+
+.project-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-6px);
+}
+
+.project-image{
+    height:120px;
+    background:linear-gradient(135deg,#2563eb,#60a5fa);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:20px;
+    font-weight:700;
+    text-align:center;
+    padding:10px;
+}
+
+.project-info{
+    padding:18px;
+}
+
+.project-info h3{
+    margin-bottom:10px;
+    color:var(--dark);
+    font-size:22px;
+}
+
+.project-info p{
+    font-size:15px;
+    line-height:1.7;
+    color:#64748b;
+}
+
+/* CERTIFICATE */
+
+.certificate{
+    background:white;
+    max-width:1000px;
+    margin:auto;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.05);
+}
+
+.certificate ul{
+    margin-left:20px;
+}
+
+.certificate li{
+    margin-bottom:12px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:white;
+    max-width:750px;
+    margin:auto;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 18px rgba(0,0,0,0.05);
+}
+
+.contact-info{
+    margin-top:25px;
+    line-height:2.2;
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:22px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    nav ul{
+        display:none;
+    }
+
+    section{
+        padding:70px 5% 50px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .subtitle{
+        font-size:16px;
+    }
+
+    .section-title{
+        font-size:28px;
+    }
+
+    .about-box,
+    .certificate,
+    .contact{
+        padding:24px;
+    }
+
+    .project-grid{
+        gap:16px;
+    }
+
+    .project-image{
+        height:100px;
+        font-size:18px;
+    }
+
+    .project-info{
+        padding:16px;
+    }
+
+    .project-info h3{
+        font-size:20px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="#" class="logo">Portfolio.</a>
+
+    <nav>
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#proyek">Skill</a></li>
+            <li><a href="#sertifikat">Sertifikat</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section id="beranda">
+
+    <div class="hero">
+
+        <h1>
+            Halo, Saya <span>Ratu Agne Panggarena</span>
+        </h1>
+
+        <p class="subtitle">
+            Mahasiswi Informatika yang memiliki pengalaman di bidang administrasi, organisasi, dan pengembangan teknologi digital.
+        </p>
+
+        <a href="#tentang" class="btn">
+            Tentang Saya
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="tentang">
+
+    <h2 class="section-title">
+        Tentang Saya
+    </h2>
+
+    <div class="about-box">
+
+        <p>
+            Saya merupakan mahasiswi Informatika STIKOM El Rahma yang memiliki minat pada pengembangan website dan administrasi modern.
+        </p>
+
+        <p>
+            Memiliki pengalaman administrasi di Bank BJB serta pengalaman kepemimpinan sebagai Ketua OSIS yang membantu saya mengembangkan kemampuan komunikasi, koordinasi tim, dan manajemen organisasi.
+        </p>
+
+        <div class="skills">
+
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Microsoft Excel</div>
+            <div class="skill">Microsoft Word</div>
+            <div class="skill">Leadership</div>
+            <div class="skill">Public Speaking</div>
+            <div class="skill">Teamwork</div>
+            <div class="skill">Administrasi</div>
+
+        </div>
+
+        <div class="experience">
+
+            <div class="exp-card">
+
+                <h3>
+                    Bank BJB
+                </h3>
+
+                <p>
+                    Pengolahan data, pengarsipan dokumen, administrasi dana dan jasa, serta pelayanan nasabah.
+                </p>
+
+            </div>
+
+            <div class="exp-card">
+
+                <h3>
+                    Ketua OSIS
+                </h3>
+
+                <p>
+                    Memimpin organisasi sekolah, koordinasi anggota, serta manajemen program kerja dan komunikasi tim.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILL DEVELOPMENT -->
+
+<section id="proyek">
+
+    <h2 class="section-title">
+        Sedang Dipelajari
+    </h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <div class="project-image">
+                HTML & CSS
+            </div>
+
+            <div class="project-info">
+
+                <h3>Frontend Development</h3>
+
+                <p>
+                    Mempelajari pengembangan website modern menggunakan HTML dan CSS untuk membuat tampilan yang responsive dan menarik.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-image">
+                UI Design
+            </div>
+
+            <div class="project-info">
+
+                <h3>UI & Digital Design</h3>
+
+                <p>
+                    Mempelajari desain antarmuka website dan tampilan digital yang clean serta user friendly.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-image">
+                Informatika
+            </div>
+
+            <div class="project-info">
+
+                <h3>Pengembangan Skill</h3>
+
+                <p>
+                    Fokus mengembangkan kemampuan di bidang informatika, administrasi digital, dan teknologi modern.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CERTIFICATE -->
+
+<section id="sertifikat">
+
+    <h2 class="section-title">
+        Sertifikat & Organisasi
+    </h2>
+
+    <div class="certificate">
+
+        <ul>
+
+            <li>Sertifikat Uji Kompetensi - PT Cemindo Gemilang Tbk</li>
+
+            <li>Ketua OSIS SMKN 1 Panggarangan</li>
+
+            <li>Anggota Paskibra Kecamatan Panggarangan</li>
+
+            <li>Aktif di LDK Keputrian STIKOM El Rahma</li>
+
+            <li>Aktif di Karang Taruna Desa Panggarangan</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="kontak">
+
+    <h2 class="section-title">
+        Kontak
+    </h2>
+
+    <div class="contact">
+
+        <p>
+            Tertarik untuk bekerja sama atau berdiskusi lebih lanjut?
+            Silakan hubungi saya melalui kontak berikut.
+        </p>
+
+        <div class="contact-info">
+
+            <p>
+                <b>Email:</b> ratuagne8@gmail.com
+            </p>
+
+            <p>
+                <b>WhatsApp:</b> +62 857 2068 1930
+            </p>
+
+            <p>
+                <b>Lokasi:</b> Bogor, Jawa Barat
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 Ratu Agne Panggarena
+    </p>
+
+</footer>
+
+</body>
+</html>
